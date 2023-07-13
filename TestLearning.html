@@ -1,11 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Introducción formularios web</title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Un formulario sirve para enviar datos a otra página que los recoge para usarlos o almacenarlos."/>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <body>
-Hola Mundo
+
+<form action="#" target="" method="get" name="formDatosPersonales">
+
+    <label for="nombre">Nombre</label>
+    <input type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre"/>
+
+    <label for="apellidopaterno">Apellido Paterno</label>
+    <input type="text" name="apellidopa" id="apellidopaterno" placeholder="Apellido Paterno"/>
+
+    <label for="apellidomaterno" />Apellido Materno</label>
+    <input type="text" name="apellidoma" id="apellidomaterno" placeholder="apellido materno" required />
+
+    <label for="telefono">Email</label>&nbsp;
+    <input type ="tel" name="telefono" id="telefono" placeholder="Telefono"/>&nbsp;
+
+    <label for="email">Email</label>
+    <input type ="email" name="email" id="email" placeholder="Email"/>&nbsp;
+
+    Grado Escolar <select>
+    <option>Licenciatura</option>
+    <option>Maestria</option>
+    <option>Doctorado</option>
+    </select>
+    <br><br/>
+
+    <div cl>
+    Selecciona tus Hobbies
+    <br><br/>
+    Futbol<input type="checkbox"/><br><br/>
+    Videojuegos<input type="checkbox"/><br><br/>
+    Salir a correr<input type="checkbox"/><br><br/>
+    Basketball<input type="checkbox"/><br><br/>
+    Leer algun libro<input type="checkbox"/><br><br/>
+    </div>
+
+    <label>Descripcion</label>
+    <textarea name="descripcion" for="descripcion" placeholder="describe brevemente en menos de 300 carácteres" maxlength="300"></textarea>
+
+    <br><br/>
+
+    <input type="submit" name="enviar" value="enviar datos"/>
+</form>
 
 </body>
 </html>
