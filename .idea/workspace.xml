@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abc4f097-b4dc-43d0-bd48-dba09770b5e8" name="Changes" comment="Cambio de brench" />
+    <list default="true" id="b1cd5a26-75ed-49a8-a73c-6a29a3e3dd48" name="Changes" comment="Se quito un input de tipo texto, ya que se repitio al corregir los errores">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_13_2023_6_15_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_13_2023_6_15_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_13_2023_6_15_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_13_2023_6_15_PM__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_13_2023_6_15_PM__Changes_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_13_2023_6_15_PM__Changes_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PruebaPractica1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLearning.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestLearning.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,145 +20,49 @@
   <component name="ComposerSettings">
     <execution />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-        <option value="HTML File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <favorite-branches>
-      <branch-storage>
-        <map>
-          <entry type="LOCAL">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="feature/test" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </favorite-branches>
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="e39c5096-0d47-448e-9fab-0a9b9e17efa8" />
-        <option name="url" value="https://github.com/JonathaEsquivel/LearningPHP.git" />
-      </UrlAndAccount>
-    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2SWaP74jOwMiGuf9FNY5CwzBLdi" />
+  <component name="ProjectId" id="2Sj7uCusM1rI1Mm8AKPBwUUNdAQ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/laragon/Learning&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\laragon\Learning" />
-    </key>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="abc4f097-b4dc-43d0-bd48-dba09770b5e8" name="Changes" comment="" />
-      <created>1689264764044</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1689264764044</updated>
-      <workItem from="1689264765043" duration="20336000" />
-      <workItem from="1689293218036" duration="683000" />
-      <workItem from="1689317876008" duration="2092000" />
-    </task>
-    <task id="LOCAL-00001" summary="Test">
+    <task id="LOCAL-00001" summary="Se quito un input de tipo texto, ya que se repitio al corregir los errores">
       <option name="closed" value="true" />
-      <created>1689265010257</created>
+      <created>1689321634550</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1689265010257</updated>
+      <updated>1689321634550</updated>
     </task>
-    <task id="LOCAL-00002" summary="Primera parte, esta fea">
-      <option name="closed" value="true" />
-      <created>1689275282528</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1689275282528</updated>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b1cd5a26-75ed-49a8-a73c-6a29a3e3dd48" name="Changes" comment="Se quito un input de tipo texto, ya que se repitio al corregir los errores" />
+      <created>1689648360985</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1689648360985</updated>
+      <workItem from="1689648362171" duration="3777000" />
+      <workItem from="1689694585075" duration="1021000" />
     </task>
-    <task id="LOCAL-00003" summary="Primera parte, esta fea x2">
-      <option name="closed" value="true" />
-      <created>1689275799350</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1689275799350</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Se agrego un templete al cual se le hicieron modificaciones para que se igresara lo requerido">
-      <option name="closed" value="true" />
-      <created>1689280520819</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1689280520819</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Se cambioel nombre del boton">
-      <option name="closed" value="true" />
-      <created>1689280882740</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1689280882740</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Cambio de brench">
-      <option name="closed" value="true" />
-      <created>1689290934637</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1689290934637</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Cambio de brench">
-      <option name="closed" value="true" />
-      <created>1689292528103</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1689292528103</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,12 +80,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test" />
-    <MESSAGE value="Primera parte, esta fea" />
-    <MESSAGE value="Primera parte, esta fea x2" />
-    <MESSAGE value="Se agrego un templete al cual se le hicieron modificaciones para que se igresara lo requerido" />
-    <MESSAGE value="Se cambioel nombre del boton" />
-    <MESSAGE value="Cambio de brench" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambio de brench" />
+    <MESSAGE value="Se quito un input de tipo texto, ya que se repitio al corregir los errores" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se quito un input de tipo texto, ya que se repitio al corregir los errores" />
   </component>
 </project>

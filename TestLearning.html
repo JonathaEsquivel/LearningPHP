@@ -6,15 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <!-- Custom Theme files -->
+    <!-- agregado de hoja de estilo -->
     <link href="style.css" rel="stylesheet" type="text/css" media="all" />
-    <!-- //Custom Theme files -->
-    <!-- web font -->
+
     <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
-    <!-- //web font -->
+
 </head>
 <body>
-<!-- main -->
+<!-- Estructura de desarrollo -->
 <div class="main-w3layouts wrapper">
     <h1>Formulario de Prueba</h1>
     <div class="main-agileinfo">
@@ -31,7 +30,6 @@
                     <option>Maestria</option>
                     <option>Doctorado</option>
                 </select><br><br/>
-
 
                 <p> Selecciona tus hobbies</p>
                 <div class="wthree-text">
@@ -106,7 +104,7 @@
                 <p>Selecciona una imagen</p>
                 <div class="wthree-text">
                     <label class="anim">
-                        <input type="file" name="Imagen" id="filename" accept=".jpg, .jpeg,.png" />
+                        <input type="file" name="Imagen" id="filename" accept=".jpg, .jpeg,.png"  onchange="ValidarImagen(this)"/>
                     </label>
                     <div class="clear"> </div>
 
@@ -114,6 +112,7 @@
             </form>
 
         </div>
+
     </div>
 
     <ul class="colorlib-bubbles">
@@ -130,8 +129,26 @@
     </ul>
 </div>
 
+<!--Script para validar tipo de archivo aceptado en el input-->
+<script>
+    function ValidarImagen(input){
+        let imagen = input.files[0]
+        let arr = ['image/jpg','image/jpeg','image/png']
+
+            if (arr.indexOf(imagen.type) != -1 ){
+                console.log('es valido')
+            }
+            else{
+                input.value = ''
+                console.log('no es valido')
+                alert('No es Valido, Selecciona otro archivo')
+            }
+
+        console.log(input)
+    }
+</script>
 
 
-<!-- //main -->
+<!-- end body -->
 </body>
 </html>
