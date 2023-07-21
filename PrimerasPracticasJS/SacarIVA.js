@@ -1,7 +1,5 @@
 /*FUNCION PARA SACAR EL IVA*/
 
-let price = 0
-let iva = 0
 function aplyIVA(price,iva){
 
     if (iva != null) {
