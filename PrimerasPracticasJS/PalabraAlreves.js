@@ -3,8 +3,7 @@
 let word = 'Hola Mundo'
 function wordInverted(word) {
 
-    let inverted = word.split('').reverse().join('')
+    return word.split('').reverse().join('')
 
-    return inverted
 }
 console.log('Texto a Invertir: ' + word + ' Texto al reves: ' + wordInverted(word))
