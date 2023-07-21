@@ -8,13 +8,13 @@ function AplicarIVA(precio,iva){
         let sacarIVA = (iva * precio) / 100
         let PrecioConIVA = sacarIVA + precio
 
-        return(PrecioConIVA)
+        return PrecioConIVA
     }
     else{
         let sacarIVA = (21 * precio) / 100
         let PrecioConIVA = sacarIVA + precio
 
-        return(PrecioConIVA)
+        return PrecioConIVA
     }
 
 }
