@@ -1,6 +1,10 @@
 /*PALABRA AL REVES O INVERTIDA*/
 
-let palabra = 'Hola Mundo';
+let word = 'Hola Mundo'
+function wordInverted(word) {
 
-let invertida = palabra.split('').reverse().join('');
-console.log('Texto a Invertir: '+ palabra + ' Texto al reves: ' + invertida);
+    let inverted = word.split('').reverse().join('')
+
+    return inverted
+}
+console.log('Texto a Invertir: ' + word + ' Texto al reves: ' + wordInverted(word))

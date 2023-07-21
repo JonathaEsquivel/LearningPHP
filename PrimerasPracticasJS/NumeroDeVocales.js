@@ -1,16 +1,22 @@
 /*SACAR EL NUMERO DE VOCALES*/
 
-let vocales = ['A','E','I','O','U']
-let numVocales = 0
+let text = 'Hola Mundo soy Jona Crack'
 
-let texto = 'Hola Mundo'
-texto = texto.toUpperCase()
-let textoArray = texto.split('')
+text = text.toUpperCase()
 
-for (let i = 0; i < textoArray.length; i++){
-    if (vocales.includes(textoArray[i])){
-        numVocales++
-    }//end if
-}//end for
+let textArray = text.split('')
 
-console.log('Numero de vocales: ' + numVocales)
+function countVowels(text) {
+    let vowels = ['A', 'E', 'I', 'O', 'U']
+    let numVowels = 0
+
+    for (let i = 0; i < textArray.length; i++) {
+        if (vowels.includes(textArray[i])) {
+            numVowels++
+        }//end if
+    }//end for
+
+    return numVowels
+}
+
+console.log('Texto: --'+ text + '-- Numero de vocales encontradas: ' + countVowels(text))

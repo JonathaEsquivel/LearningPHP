@@ -1,21 +1,21 @@
 /*FUNCION PARA SACAR EL IVA*/
 
-let precio = 0
+let price = 0
 let iva = 0
-function AplicarIVA(precio,iva){
+function aplyIVA(price,iva){
 
     if (iva != null) {
-        let sacarIVA = (iva * precio) / 100
-        let PrecioConIVA = sacarIVA + precio
+        let getIVA = (iva * price) / 100
+        let priceWhitIVA = getIVA + price
 
-        return PrecioConIVA
+        return priceWhitIVA
     }
     else{
-        let sacarIVA = (21 * precio) / 100
-        let PrecioConIVA = sacarIVA + precio
+        let getIVA = (21 * price) / 100
+        let priceWithIVA = getIVA + price
 
-        return PrecioConIVA
+        return priceWithIVA
     }
 
 }
-console.log('Total con el IVA aplicado ' + AplicarIVA(50,16))
+console.log('Total con el IVA aplicado ' + aplyIVA(50,16))
