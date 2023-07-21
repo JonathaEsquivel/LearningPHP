@@ -11,7 +11,7 @@
 
     <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
 
-    <script src="EjercicioJS.js" type="text/javascript"></script>
+    <script src="ValidarTipoArchivo.js" type="text/javascript"></script>
 
 
 </head>
@@ -131,27 +131,6 @@
         <li></li>
     </ul>
 </div>
-
-<!--Script para validar tipo de archivo aceptado en el input-->
-<script>
-    function ValidarImagen(input){
-        let imagen = input.files[0]
-        let arr = ['image/jpg','image/jpeg','image/png']
-
-            if (arr.indexOf(imagen.type) != -1 ){
-                console.log('es valido')
-            }
-            else{
-                input.value = ''
-                console.log('no es valido')
-                alert('No es Valido, Selecciona otro archivo')
-            }
-
-        console.log(input)
-    }
-</script>
-
-
 <!-- end body -->
 </body>
 </html>
