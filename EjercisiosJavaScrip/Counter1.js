@@ -1,6 +1,4 @@
 /*Declarar variables a utilizar*/
-let param1 = 0
-let param2 = 0
 
 
 function RegresarArr(param1,param2){ /*Iniciamos funcion*/
@@ -15,5 +13,5 @@ return retArray /*regresamos el arreglo con los valores ingresados */
 
 }//end function
 
-console.log(RegresarArr(10,3))/*Mandamos imprimir la funcion ingresando los dos valores numericos esperados*/
+console.log(RegresarArr(20,10))/*Mandamos imprimir la funcion ingresando los dos valores numericos esperados*/
 
