@@ -1,0 +1,102 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EXAMEN</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    Formulario de <span id="nombre"></span>
+                </div>
+                <div class="card-body">
+                    <form id="formulario">
+                        <div class="mb-3">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" id="iNombre" class="form-control">
+                            <div class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Edad</label>
+                            <input type="number" id="iEdad" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Descripcion</label>
+                            <textarea class="form-control" rows="3" id="tDescripcion"></textarea>
+                            <div class="form-text" id="vDescripcion" style="display: none">texto de validacion</div>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" id="cOpciones" class="form-check-input">
+                            <label class="form-check-label">Mostrar opciones</label>
+                        </div>
+                        <select class="form-select mb-3" id="opciones" style="display:none;">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+
+                        <button type="submit" id="bEnviar" class="btn btn-primary" disabled>Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Brand</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><img src="" id="image" width="200"></td>
+                    <td id="brand">brand</td>
+                    <td id="category">category</td>
+                    <td id="desc">desc</td>
+                    <td id="price">price</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<!--
+    Requerimientos
+
+    1 - al div con la clase card-header agregar las clases de "bg-primary" y "text-white"
+    2 - al div con la clase card-body agregar la clase de "bg-light"
+    3 - al elemento con el id "nombre" agregar el texto que se escriba dentro del input nombre
+    4 - al input de edad, al finalizar de escribir validar que solo se hayan escrito numeros enteros
+        pueden usar la funcion de Number.isInteger(valor)
+    5 - en el text area de descripcion validar que minimo sean 15 caracteres y maximo 25 caracteres
+    6 - agregar un evento al checkbox de mostrar opciones cuando este checked mostrar el select "opciones"
+        y cuando no este checked ocultar el mismo select
+    7 - Desactivar el boton de enviar en caso de que las validaciones anteriores no se cumplan
+    8 - al formulario agregar el evento de "submit" y agregar los valores en un objeto
+        {
+            nombre: 'enrique',
+            edad: 15
+        }
+    9 - investigar como se hace una llamada ajax a la siguiente API "https://dummyjson.com/products/1"
+    10 - mostrar los resultados del api en la tabla
+-->
