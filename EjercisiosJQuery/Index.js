@@ -1,42 +1,44 @@
-
 $(document).ready(function (){
 
+    addClass()
+    function addClass() {
+        //Ejercisio1
+        $("div.card-header").addClass("bg-primary text-white");
+        //Ejercisio2
+        $("div.card-body").addClass("be-light");
+    }//en function
 
-     //Ejercisio1
-    $("div.card-header").addClass("bg-primary text-white");
-    //Ejercisio2
-    $("div.card-body").addClass("be-light");
     //Ejercisio3
-
     $("#iNombre").on("change", function (){
 
-       var Nombre = $(this).val()
+       var name = $(this).val()
 
-        ValidarNombre(Nombre);
+        validateName(name);
 
-        $("#nombre").text(Nombre);
+        $("#nombre").text(name);
 
-        ValidarTodo();
+        validateAll();
     });
+
     //Ejercisio4
     $("#iEdad").on("input", function (){
 
-        let Edad = $(this).val();
+        let age = $(this).val();
 
         this.value = this.value.replace(/[^0-9]/g,'');
 
-        ValidarEdad(Edad);
-        ValidarTodo();
+        validateAge(age);
+        validateAll();
 
     });
 
     //Ejercisio5
     $("#tDescripcion").on("input", function (){
 
-        let Descripcion = $(this).val();
+        let description = $(this).val();
 
-        ValidarTextArea(Descripcion);
-        ValidarTodo();
+        validateDescription(description);
+        validateAll();
 
     });//end funcion
 
@@ -54,7 +56,7 @@ $(document).ready(function (){
     });
 
     //Ejercisio7
-    function ValidarNombre(Nombre){
+    function validateName(Nombre){
 
         if(Nombre.length != 0){
             return true
@@ -64,9 +66,9 @@ $(document).ready(function (){
 
     }//end funcion
 
-    function ValidarEdad(Edad){
+    function validateAge(age){
 
-        if (Edad != 0 && Edad != null){
+        if (age != 0 && age != null){
             return true
         }else{
             return false
@@ -74,13 +76,11 @@ $(document).ready(function (){
 
     }//end funcion
 
-    function ValidarTextArea(Descripcion){
+    function validateDescription(description){
 
         let min = 15;
         let max = 25;
-
-        let nText = Descripcion.length;
-
+        let nText = description.length;
 
         if (nText >= min && nText <= max){
 
@@ -96,13 +96,13 @@ $(document).ready(function (){
 
     }//end funcion
 
-    function ValidarTodo(){
+    function validateAll(){
 
-        NombreVT = $("#iNombre").val();
-        EdadVT = $("#iEdad").val();
-        Descripcion = $("#tDescripcion").val();
+        nameVT = $("#iNombre").val();
+        ageVT = $("#iEdad").val();
+        description = $("#tDescripcion").val();
 
-        if (ValidarNombre(NombreVT) == true && ValidarEdad(EdadVT) == true && ValidarTextArea(Descripcion) == true){
+        if (validateName(nameVT) == true && validateAge(ageVT) == true && validateDescription(description) == true){
 
             $("#bEnviar").attr('disabled',false);
 
@@ -113,33 +113,30 @@ $(document).ready(function (){
     }//end funcion
 
 //Ejercisio8
-    $("#formulario").on("submit", function (evento){
+    $("#formulario").on("submit", function (event){
 
-        evento.preventDefault()
-        console.log("submit")
+        event.preventDefault()
 
-       let Persona = {
+       let person = {
 
-           Nombre: $("#iNombre").val(),
-           Edad: $("#iEdad").val(),
-           Descripcion: $("#tDescripcion").val()
-
+           name: $("#iNombre").val(),
+           age: $("#iEdad").val(),
+           description: $("#tDescripcion").val()
 
         }//end objeto
-        console.log(Persona)
-
+        console.log(person)
     })
 
 //Ejercisio9
-
-    function LLamarAjax() {
+    function callAjax() {
         $.ajax({
             type: "GET",
             url: "https://dummyjson.com/products/1",
             dataType: "json",
             success: function (data) {
                 console.log(data)
-                LlenadoTabla(data);
+                insertTable(data);
+                selectImage(data)
             },
             failure: function (data) {
                 alert(data.responseText);
@@ -149,12 +146,11 @@ $(document).ready(function (){
             }
         });
     }//end funcion
-
-    LLamarAjax()
+    callAjax()
 
 //Ejercisio10
-    function LlenadoTabla(data){
-        console.log(data)
+    function insertTable(data){
+
         $("#image").attr("src",data.images[1])
         $("#brand").text(data.brand)
         $("#category").text(data.category)
@@ -163,5 +159,31 @@ $(document).ready(function (){
 
     }//end funcion
 
+    //INTENTO DE SELECCIONAR IMAGEN CON EL SELECT NO EXITOSO SE REVISA CON PM :)
+    function selectImage(data){
+
+        let opSelect = $("#opciones").val();
+
+        switch (opSelect) {
+            case 1:
+                $("#image").attr("src",data.images[1]);break;
+
+            case 2:
+                $("#image").attr("src",data.images[2]);
+            break;
+
+            case 3:
+                $("#image").attr("src",data.images[3]);
+            break;
+        }//end switch
+
+    }//end funcion
+
+    $("#opciones").on("change",function (){
+
+        let options = $(this).val();
+        selectImage(options);
+
+    })
 
 }); //end ready
