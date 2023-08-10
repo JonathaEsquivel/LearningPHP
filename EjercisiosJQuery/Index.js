@@ -1,12 +1,35 @@
+function addClass() {
+    //Ejercisio1
+    $("div.card-header").addClass("bg-primary text-white");
+    //Ejercisio2
+    $("div.card-body").addClass("be-light");
+}//en function
+
+function validateName(Nombre){
+
+    if(Nombre.length != 0){
+        return true
+    }else{
+        return false
+    }
+
+}//end funcion
+
+function validateAge(age){
+
+    if (age != 0 && age != null){
+        return true
+    }else{
+        return false
+    }
+
+}//end funcion
+
+
 $(document).ready(function (){
 
     addClass()
-    function addClass() {
-        //Ejercisio1
-        $("div.card-header").addClass("bg-primary text-white");
-        //Ejercisio2
-        $("div.card-body").addClass("be-light");
-    }//en function
+
 
     //Ejercisio3
     $("#iNombre").on("change", function (){
@@ -56,33 +79,13 @@ $(document).ready(function (){
     });
 
     //Ejercisio7
-    function validateName(Nombre){
 
-        if(Nombre.length != 0){
-            return true
-        }else{
-            return false
-        }
-
-    }//end funcion
-
-    function validateAge(age){
-
-        if (age != 0 && age != null){
-            return true
-        }else{
-            return false
-        }
-
-    }//end funcion
 
     function validateDescription(description){
 
-        let min = 15;
-        let max = 25;
         let nText = description.length;
 
-        if (nText >= min && nText <= max){
+        if (nText >= 15 && nText <= 25){
 
             $("#vDescripcion").show().text("Es Valido").removeClass("text-danger").addClass("text-success");
 
@@ -98,16 +101,18 @@ $(document).ready(function (){
 
     function validateAll(){
 
+        buttonSend = $("#bEnviar");
+
         nameVT = $("#iNombre").val();
         ageVT = $("#iEdad").val();
         description = $("#tDescripcion").val();
 
         if (validateName(nameVT) == true && validateAge(ageVT) == true && validateDescription(description) == true){
 
-            $("#bEnviar").attr('disabled',false);
+            buttonSend.attr('disabled',false);
 
         }else{
-            $("#bEnviar").attr('disabled',true);
+            buttonSend.attr('disabled',true);
         }
 
     }//end funcion
@@ -128,15 +133,15 @@ $(document).ready(function (){
     })
 
 //Ejercisio9
+   let product;
     function callAjax() {
         $.ajax({
             type: "GET",
-            url: "https://dummyjson.com/products/1",
+            url: "https://dummyjson.com/products/",
             dataType: "json",
             success: function (data) {
-                console.log(data)
-                insertTable(data);
-                selectImage(data)
+                product = data;
+                insertTable();
             },
             failure: function (data) {
                 alert(data.responseText);
@@ -149,41 +154,72 @@ $(document).ready(function (){
     callAjax()
 
 //Ejercisio10
-    function insertTable(data){
+    function insertTable(){
 
-        $("#image").attr("src",data.images[1])
-        $("#brand").text(data.brand)
-        $("#category").text(data.category)
-        $("#desc").text(data.description)
-        $("#price").text(data.price)
+        for (let i = 0; i < product.products.length; i++){
+
+            //insertamos las filas de la tabla para presentar los productos que tiene data
+            let tr = getTr(i)
+            $("#cuerpo").append(tr)
+            /*
+            $("#image").attr("src",product.products[i].images[1])
+            $("#brand").text(product.products[i].brand)
+            $("#category").text(product.products[i].category)
+            $("#desc").text(product.products[i].description)
+            $("#price").text(product.products[i].price)
+            */
+        }//end for
 
     }//end funcion
 
-    //INTENTO DE SELECCIONAR IMAGEN CON EL SELECT NO EXITOSO SE REVISA CON PM :)
-    function selectImage(data){
+    //funcion para insertar datos en la tabla
+   function getTr(i){
+
+        let pp = product.products;
+
+        const tr = `  <tr>
+                    <td><img src="${ pp[i].images[0]}" id="image" width="200"></td>
+                    <td id="brand">${ pp[i].brand}</td>
+                    <td id="category">${ pp[i].category}</td>
+                    <td id="desc">${ pp[i].description}</td>
+                    <td id="price">${ pp[i].price}</td>
+                    </tr>`
+
+       return tr;
+   }
+
+    //Esta funcion ya quedo obsoleta, ya que cambio el funcionamiento del select, ya que no es necesario
+    function selectImage(){
 
         let opSelect = $("#opciones").val();
 
-        switch (opSelect) {
-            case 1:
-                $("#image").attr("src",data.images[1]);break;
+        $("#image").attr("src",product.images[opSelect]);
 
-            case 2:
-                $("#image").attr("src",data.images[2]);
+        /*
+        switch (opSelect) {
+            case '1':
+
+                $("#image").attr("src",product.images[1]);
             break;
 
-            case 3:
-                $("#image").attr("src",data.images[3]);
+            case '2':
+
+                $("#image").attr("src",product.images[2]);
+
+            break;
+
+            case '3':
+
+                $("#image").attr("src",product.images[3]);
             break;
         }//end switch
-
+       */
     }//end funcion
 
     $("#opciones").on("change",function (){
 
-        let options = $(this).val();
-        selectImage(options);
-
+        //selectImage(product);
+        selectImage();
     })
 
 }); //end ready
