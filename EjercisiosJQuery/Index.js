@@ -26,6 +26,21 @@ function validateAge(age){
 }//end funcion
 
 
+function insertSelect(product){
+    let select = $("#opciones");
+    console.log(product);
+    let idProduct = product.products;
+
+    for(i = 0; i < product.products.length; i++){
+
+     option = document.createElement("option");
+     option.value = `${idProduct[i].id}`;
+     option.text = `${idProduct[i].id}`;
+     select.append(option);
+  }
+}
+
+
 $(document).ready(function (){
 
     addClass()
@@ -142,6 +157,7 @@ $(document).ready(function (){
             success: function (data) {
                 product = data;
                 insertTable();
+                insertSelect(product);
             },
             failure: function (data) {
                 alert(data.responseText);
@@ -151,7 +167,7 @@ $(document).ready(function (){
             }
         });
     }//end funcion
-    callAjax()
+    callAjax();
 
 //Ejercisio10
     function insertTable(){
@@ -177,7 +193,7 @@ $(document).ready(function (){
 
         let pp = product.products;
 
-        const tr = `  <tr>
+        const tr = `  <tr id="${pp[i].id}" class="dataProduct">
                     <td><img src="${ pp[i].images[0]}" id="image" width="200"></td>
                     <td id="brand">${ pp[i].brand}</td>
                     <td id="category">${ pp[i].category}</td>
@@ -218,8 +234,16 @@ $(document).ready(function (){
 
     $("#opciones").on("change",function (){
 
-        //selectImage(product);
-        selectImage();
+        let idProduct = $("#opciones").val();
+        let row = $(`#${idProduct}`);
+
+        if(idProduct == 0) {
+            $(".dataProduct").show();
+        }else {
+            $(".dataProduct").hide();
+            row.show()
+        }
+
     })
 
 }); //end ready
