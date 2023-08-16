@@ -25,7 +25,6 @@ function validateAge(age){
 
 }//end funcion
 
-
 function insertSelect(product){
     let select = $("#opciones");
     console.log(product);
@@ -44,7 +43,6 @@ function insertSelect(product){
 $(document).ready(function (){
 
     addClass()
-
 
     //Ejercisio3
     $("#iNombre").on("change", function (){
@@ -94,7 +92,6 @@ $(document).ready(function (){
     });
 
     //Ejercisio7
-
 
     function validateDescription(description){
 
@@ -177,28 +174,22 @@ $(document).ready(function (){
             //insertamos las filas de la tabla para presentar los productos que tiene data
             let tr = getTr(i)
             $("#cuerpo").append(tr)
-            /*
-            $("#image").attr("src",product.products[i].images[1])
-            $("#brand").text(product.products[i].brand)
-            $("#category").text(product.products[i].category)
-            $("#desc").text(product.products[i].description)
-            $("#price").text(product.products[i].price)
-            */
+            
         }//end for
 
     }//end funcion
 
     //funcion para insertar datos en la tabla
-   function getTr(i){
+   function getTr(index){
 
         let pp = product.products;
 
-        const tr = `  <tr id="${pp[i].id}" class="dataProduct">
-                    <td><img src="${ pp[i].images[0]}" id="image" width="200"></td>
-                    <td id="brand">${ pp[i].brand}</td>
-                    <td id="category">${ pp[i].category}</td>
-                    <td id="desc">${ pp[i].description}</td>
-                    <td id="price">${ pp[i].price}</td>
+        const tr = `  <tr id="${pp[index].id}" class="dataProduct">
+                    <td><img src="${ pp[index].images[0]}" id="image" width="200"></td>
+                    <td id="brand">${ pp[index].brand}</td>
+                    <td id="category">${ pp[index].category}</td>
+                    <td id="desc">${ pp[index].description}</td>
+                    <td id="price">${ pp[index].price}</td>
                     </tr>`
 
        return tr;
@@ -211,25 +202,6 @@ $(document).ready(function (){
 
         $("#image").attr("src",product.images[opSelect]);
 
-        /*
-        switch (opSelect) {
-            case '1':
-
-                $("#image").attr("src",product.images[1]);
-            break;
-
-            case '2':
-
-                $("#image").attr("src",product.images[2]);
-
-            break;
-
-            case '3':
-
-                $("#image").attr("src",product.images[3]);
-            break;
-        }//end switch
-       */
     }//end funcion
 
     $("#opciones").on("change",function (){
