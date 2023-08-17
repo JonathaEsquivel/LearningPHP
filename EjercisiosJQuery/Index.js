@@ -27,7 +27,6 @@ function validateAge(age){
 
 function insertSelect(product){
     let select = $("#opciones");
-    console.log(product);
     let idProduct = product.products;
 
     for(i = 0; i < product.products.length; i++){
@@ -92,29 +91,25 @@ $(document).ready(function (){
     });
 
     //Ejercisio7
-
     function validateDescription(description){
 
         let nText = description.length;
 
         if (nText >= 15 && nText <= 25){
 
-            $("#vDescripcion").show().text("Es Valido").removeClass("text-danger").addClass("text-success");
+            $("#vDescripcion").text("Es Valido").removeClass("text-danger").addClass("text-success").show();
 
             return true
         }
         else{
-            $("#vDescripcion").show().text("No es valido").removeClass("text-success").addClass("text-danger");
+            $("#vDescripcion").text("No es valido").removeClass("text-success").addClass("text-danger").show();
             return false
 
         }
-
     }//end funcion
 
     function validateAll(){
-
         buttonSend = $("#bEnviar");
-
         nameVT = $("#iNombre").val();
         ageVT = $("#iEdad").val();
         description = $("#tDescripcion").val();
@@ -131,17 +126,13 @@ $(document).ready(function (){
 
 //Ejercisio8
     $("#formulario").on("submit", function (event){
-
         event.preventDefault()
-
-       let person = {
-
+        let person = {
            name: $("#iNombre").val(),
            age: $("#iEdad").val(),
            description: $("#tDescripcion").val()
-
         }//end objeto
-        console.log(person)
+        alert(person);
     })
 
 //Ejercisio9
@@ -168,22 +159,16 @@ $(document).ready(function (){
 
 //Ejercisio10
     function insertTable(){
-
         for (let i = 0; i < product.products.length; i++){
-
             //insertamos las filas de la tabla para presentar los productos que tiene data
             let tr = getTr(i)
             $("#cuerpo").append(tr)
-            
         }//end for
-
     }//end funcion
 
-    //funcion para insertar datos en la tabla
+//funcion para insertar datos en la tabla
    function getTr(index){
-
         let pp = product.products;
-
         const tr = `  <tr id="${pp[index].id}" class="dataProduct">
                     <td><img src="${ pp[index].images[0]}" id="image" width="200"></td>
                     <td id="brand">${ pp[index].brand}</td>
@@ -191,17 +176,13 @@ $(document).ready(function (){
                     <td id="desc">${ pp[index].description}</td>
                     <td id="price">${ pp[index].price}</td>
                     </tr>`
-
        return tr;
    }
 
     //Esta funcion ya quedo obsoleta, ya que cambio el funcionamiento del select, ya que no es necesario
     function selectImage(){
-
         let opSelect = $("#opciones").val();
-
         $("#image").attr("src",product.images[opSelect]);
-
     }//end funcion
 
     $("#opciones").on("change",function (){
@@ -219,3 +200,49 @@ $(document).ready(function (){
     })
 
 }); //end ready
+
+//EXAMEN ENVOLVIENDO REGALOS
+function wrapping(gifts) {
+    let tapaarriba = "";
+    let arrGifts = new Array();
+    let gift = "";    
+
+    for(i = 0; i < gifts.length; i++){
+        let tamaño = gifts[i].length + 2;
+        tapaarriba = "*".repeat(tamaño);
+        /*
+        for(j = 0; j < tamaño; j++){
+        }
+       */
+        gift = tapaarriba+'\n'+ "*"+gifts[i]+"*"+'\n'+tapaarriba;
+        arrGifts.push(gift);
+
+    }
+    return arrGifts;
+  }
+  
+  const gifts = ['cat', 'game', 'socks']
+  const wrapped = wrapping(gifts)
+  console.log(wrapped)
+
+
+  /*
+    Requerimientos
+
+    1 - al div con la clase card-header agregar las clases de "bg-primary" y "text-white"
+    2 - al div con la clase card-body agregar la clase de "bg-light"
+    3 - al elemento con el id "nombre" agregar el texto que se escriba dentro del input nombre
+    4 - al input de edad, al finalizar de escribir validar que solo se hayan escrito numeros enteros
+        pueden usar la funcion de Number.isInteger(valor)
+    5 - en el text area de descripcion validar que minimo sean 15 caracteres y maximo 25 caracteres
+    6 - agregar un evento al checkbox de mostrar opciones cuando este checked mostrar el select "opciones"
+        y cuando no este checked ocultar el mismo select
+    7 - Desactivar el boton de enviar en caso de que las validaciones anteriores no se cumplan
+    8 - al formulario agregar el evento de "submit" y agregar los valores en un objeto
+        {
+            nombre: 'enrique',
+            edad: 15
+        }
+    9 - investigar como se hace una llamada ajax a la siguiente API "https://dummyjson.com/products/1"
+    10 - mostrar los resultados del api en la tabla
+*/
