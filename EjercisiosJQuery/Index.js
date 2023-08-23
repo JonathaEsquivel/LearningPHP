@@ -201,30 +201,6 @@ $(document).ready(function (){
 
 }); //end ready
 
-//EXAMEN ENVOLVIENDO REGALOS
-function wrapping(gifts) {
-    let tapaarriba = "";
-    let arrGifts = new Array();
-    let gift = "";    
-
-    for(i = 0; i < gifts.length; i++){
-        let tamaño = gifts[i].length + 2;
-        tapaarriba = "*".repeat(tamaño);
-        /*
-        for(j = 0; j < tamaño; j++){
-        }
-       */
-        gift = tapaarriba+'\n'+ "*"+gifts[i]+"*"+'\n'+tapaarriba;
-        arrGifts.push(gift);
-
-    }
-    return arrGifts;
-  }
-  
-  const gifts = ['cat', 'game', 'socks']
-  const wrapped = wrapping(gifts)
-  console.log(wrapped)
-
 
   /*
     Requerimientos
